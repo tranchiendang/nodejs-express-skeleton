@@ -1,0 +1,18 @@
+<%# main part of layout %>
+<!DOCTYPE html>
+<html>
+	<head>
+		<%- include('header'); %>
+	</head>
+	<body class="hold-transition skin-blue sidebar-mini">
+		<div class="wrapper">
+			<%- include('navigation'); %>
+			<%- include('sidebar'); %>
+	    	<div class="content-wrapper">
+	    		<%- body %>
+	    	</div>
+	    	<%- include('footer'); %>
+	    	<%- include('js'); %>
+	  </div>
+	</body>
+</html>
