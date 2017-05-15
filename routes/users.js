@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var models = require('../models');
+var authentication_mdl = require('../middlewares/authentication');
+var session_store;
 
 /* GET users listing. */
 /*
@@ -13,7 +15,7 @@ router.get('/', function(req, res, next) {
 	});
 });
 */
-router.get('/', function(req, res, next) {
+router.get('/', authentication_mdl.is_login, function(req, res, next) {
 	res.render('blankpage', { title: 'Express' });
 });
 
