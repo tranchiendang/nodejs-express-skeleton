@@ -7,5 +7,12 @@ var Auth =
 		}
 		next();
 	},
+	
+	isLoggedIn: function (req, res, next){
+		if (req.user){
+			return next();
+		}
+		res.redirect('/login');
+	}
 };
 module.exports = Auth;

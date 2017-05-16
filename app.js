@@ -11,7 +11,7 @@ var users = require('./routes/users');
 var expressValidator = require('express-validator');
 var methodOverride = require('method-override');
 var expressLayouts = require('express-ejs-layouts'); 
-
+var passport = require('passport');
 var app = express();
 
 // view engine setup
@@ -24,10 +24,13 @@ app.set('layout', 'layout/base');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+require('./config/passport')(passport);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({secret:"pass123456"}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
 app.use(expressValidator());
 app.use(cookieParser());
