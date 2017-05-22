@@ -42,6 +42,7 @@ $(document).ready(function() {
 	});
 	
 	default_populate_yearbuilt();
+	default_populate_propertytype();
 });
 
 var clearForm = function(){
@@ -67,5 +68,12 @@ var default_populate_yearbuilt = function(){
 var populate_states = function(objArr) {
 	objArr.forEach(function(obj){
 		$('#property_stateid').append("<option value='" + obj.id + "'>" + obj.shortname + "</option>");
+	});
+};
+
+var default_populate_propertytype = function(){
+	var arrType = {'residential': 'Residential', 'commercial': 'Commercial'};
+	$.each(arrType, function(key, value){
+		$('#property_type').append("<option value='" + key + "'>" + value + "</option>")
 	});
 };
