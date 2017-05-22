@@ -141,3 +141,16 @@ i {
 #sendmessage.show,.show  {
   display:block;
 }
+
+#property_master tfoot {
+	display: table-header-group;
+}
+
+#property_master tfoot input{
+	width: 100%;
+	padding: 3px;
+}
+
+#property_master thead {
+	display: table-row-group;
+}

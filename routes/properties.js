@@ -30,8 +30,15 @@ router.post('/update', function(req, res, next){
 });
 
 router.get('/api/getAllProperties', function(req, res) {
-	models.tblproperties.findAll({ raw: true})
+	models.tblproperties.findAll({ 
+		raw: true,
+		include: [{
+			model: models.tblowners
+		}]
+	})
 	.then(result => {
+		console.log(result[0]['tblowner.firstname']);
+		console.log(typeof result[0]["tblowner.firstname"]);
 		res.json(result);
 	});
 });

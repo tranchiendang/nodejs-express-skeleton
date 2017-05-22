@@ -10,6 +10,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var properties = require('./routes/properties');
 var states = require('./routes/states');
+var owners = require('./routes/owners');
 var expressValidator = require('express-validator');
 var methodOverride = require('method-override');
 var expressLayouts = require('express-ejs-layouts'); 
@@ -42,6 +43,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/properties', properties);
 app.use('/states', states);
+app.use('/owners', owners);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
