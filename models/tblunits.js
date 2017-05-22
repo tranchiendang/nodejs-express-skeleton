@@ -1,7 +1,10 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var tblunits = sequelize.define('tblunits', {
-    number: DataTypes.INTEGER,
+    number: {
+    	type: DataTypes.INTEGER,
+    	unique: true
+    },
     size: DataTypes.INTEGER,
     marketrent: DataTypes.DOUBLE,
     address: DataTypes.TEXT,

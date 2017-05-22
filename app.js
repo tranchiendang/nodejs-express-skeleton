@@ -8,6 +8,8 @@ var session = require('express-session');
 var flash = require('express-flash');
 var index = require('./routes/index');
 var users = require('./routes/users');
+var properties = require('./routes/properties');
+var states = require('./routes/states');
 var expressValidator = require('express-validator');
 var methodOverride = require('method-override');
 var expressLayouts = require('express-ejs-layouts'); 
@@ -38,6 +40,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/properties', properties);
+app.use('/states', states);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

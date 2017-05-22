@@ -1,0 +1,172 @@
+<section class="content-header"> 
+  <h1>
+     Blank Page<small>it all starts here</small></h1>
+  <ol class="breadcrumb"> 
+    <li> <a href="#"> <i class="fa fa-dashboard"></i>Level </a></li>
+    <li class="active">Here </li>
+  </ol>
+</section>
+<section class="content">
+  <div class="box">
+  	<div class="box-header with-border">
+  		<h3 class="box-title">Properties</h3>
+  		<div class="box-tools pull-right">
+  			<button class="btn btn-box-tool" type="button" data-widget="collapse" data-toggle="tooltip" title="collapse"><i class="fa fa-minus"></i></button>
+  		</div>
+  	</div>
+  	<div class="box-body table-responsive">
+  		<div class="data-table">
+  			<table class="table table-bordered table-hover dataTable" id="property_master">
+  				<thead>
+  				<tr>
+  					<th>Property name</th>
+  					<th>Rental owners</th>
+  					<th>Property type</th>
+  					<th>Subtype</th>
+  					<th>Address</th>
+  				</tr>
+  				</thead>
+  				<tbody>
+  				
+  				</tbody>
+  			</table>
+  		</div>
+  	</div>
+  </div>
+  <div class="box">
+    <div class="box-header with-border">
+      <h3 class="box-title">Details</h3>
+      <div class="box-tools pull-right">
+        <button class="btn btn-box-tool" type="button" data-widget="collapse" data-toggle="tooltip" title="collapse"><i class="fa fa-minus"></i></button>
+      </div>
+    </div>
+    <div class="box-body">
+    	<% if (messages.msg_info) { %>
+    		<div class="alert alert-success alert-dismissable">
+							<button type="button" data-dismiss="alert" aria-hidden="true" class="close">x</button>
+							<h4>
+								<i class="icon fa fa-check"></i>Success!
+							</h4>
+							<%- messages.msg_info %>
+						</div>
+		<% } %>
+		<% if (messages.msg_error){ %>
+						<div class="alert alert-danger alert-dismissable">
+							<button type="button" data-dismiss="alert" aria-hidden="true" class="close">x</button>
+							<h4>
+								<i class="icon fa fa-ban"></i>Alert!
+							</h4>
+							<%- messages.msg_error %>
+						</div>
+		<% } %>
+      <form role="form" method="post" action="/properties/update" id="detail_property">
+		    <div class="contentform">
+		
+		    	<div class="leftcontact">
+			        <div class="form-group">
+					  	<label for="property_name" class="col-sm-4 control-label">Property name</label>
+					  	<div class="com-sm-4">
+				        	<input type="text" name="name" id="property_name">
+						</div>
+					</div> 
+		
+		            <div class="form-group">
+			            <label for="property_addr1" class="col-sm-4 control-label">Address 1</label>
+			            <div class="com-sm-4">
+							<input type="text" name="addr1" id="property_addr1"/>
+			            </div>
+					</div>
+		
+					<div class="form-group">
+						<label for="property_addr2" class="col-sm-4 control-label">Address 2</label>
+						<div class="com-sm-4">
+		                	<input type="email" name="addr2" id="property_addr2"/>
+		                </div>
+					</div>	
+		
+					<div class="form-group">
+						<label for="property_city" class="col-sm-4 control-label">City</label>
+						<div class="com-sm-4">
+							<input type="text" name="city" id="property_city"/>
+		                </div>
+					</div>
+		
+					<div class="form-group">
+						<label for="property_stateid" class="col-sm-2 control-label">State</label>
+						<div class="col-sm-4">
+							<select name="stateid" id="property_stateid"> </select>
+						</div>
+						<label for="property_zip" class="col-sm-2 control-label">Zip</label>
+						<div class="col-sm-4">
+							<input type="text" name="zip" id="property_zip"/>
+						</div>
+					</div>
+						
+					<div class="form-group">
+						<label for="property_type" class="col-sm-4 control-label">Property type</label>
+						<div class="com-sm-4">
+							<input type="text" name="propertytype" id="property_type"/>
+		                </div>
+					</div>	
+					
+					<div class="form-group">
+						<label for="property_subtype" class="col-sm-4 control-label">Subtype</label>
+						<div class="com-sm-4">
+							<input type="text" name="subtype" id="property_subtype" />
+						</div>
+					</div>
+		
+			</div>
+		
+			<div class="rightcontact">	
+		
+					<div class="form-group">
+						<div class="row">
+						<label for="property_yearbuilt" class="col-sm-3 control-label">Year built</label>
+						<div class="col-sm-3">
+							<select name="yearbuilt" id="property_yearbuilt" ></select>
+		                </div>
+		                
+		                <div class="col-sm-3">
+							<button type="submit" class="btn btn-primary btn-block btn-flat">Save</button>
+						</div>
+						
+						<div class="col-sm-3">
+							<button type="submit" class="btn btn-primary btn-block btn-flat">Deactive</button>
+						</div>
+						</div>
+					</div>	
+		
+					<div class="form-group">
+						<label for="property_reserveamt" class="col-sm-4 control-label">Reserve amount</label> 
+						<div class="com-sm-4">
+							<input type="text" name="reserveamt" id="property_reserveamt" />
+		            	</div>
+					</div>
+		
+					<div class="form-group">
+						<label for="property_rentalownerid" class="col-sm-4 control-label">Rental owner</label>	
+						<div class="com-sm-4">
+			                <input type="text" name="rentalownerid" id="property_rentalownerid" />
+			            </div>
+					</div>
+				
+					<div class="form-group">
+						<label for="property_description" class="col-sm-4 control-label">Listing information</label>
+						<div class="com-sm-4">
+							<input type="text" name="description" id="property_description" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="property_notes" class="col-sm-4 control-label">Notes</label>
+						<div class="com-sm-4">
+							<input type="text" name="note" id="property_notes" />
+						</div>
+					</div>	
+			</div>
+		</div>
+      </form>
+    </div>
+  </div>
+</section>
